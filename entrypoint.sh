@@ -19,8 +19,10 @@ git config --global --add safe.directory ${GITHUB_WORKSPACE}
 cd ${GITHUB_WORKSPACE}
 git fetch
 SRC_FILES=$(git diff origin/${GITHUB_BASE_REF} --name-only | grep ".puml" || :)
+OIFS="$IFS"
+IFS=$'\n'
 for SRC_FILE in ${SRC_FILES}; do
-  java -jar /plantuml.jar $SRC_FILE -charset UTF-8
+  java -jar /plantuml.jar "$SRC_FILE" -charset UTF-8
   echo "generate from $SRC_FILE"
 done
 

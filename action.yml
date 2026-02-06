@@ -1,4 +1,4 @@
-name: "Generate and Commit PlantUML Diagrams"
+name: "Generate and Commit PlantUML Diagrams with spaces"
 description: "generate from puml files to png files, and commit."
 branding:
   icon: "image"
